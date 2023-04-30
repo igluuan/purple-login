@@ -209,7 +209,7 @@ html body {
     }
 
     nav#nav.active #menu {
-        height: calc(27vh - 81px);
+        height: calc(25vh - 81px);
         visibility: visible;
         overflow-y: auto;
     }
@@ -217,6 +217,10 @@ html body {
     #menu li {
         margin: 13px 1rem;
         border-bottom: 1px solid gray;
+    }
+
+    #nav li:hover {
+        transform: translateY(0);
     }
 
 }
@@ -270,6 +274,10 @@ html body {
 
     #menu li {
         margin: 10px 1rem;
+    }
+
+    #nav li:hover {
+        transform: translateY(0);
     }
 }
 
