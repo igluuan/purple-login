@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&family=Poppins:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font01:font-family: 'Poppins', sans-serif;
+    --font02:font-family: 'Montserrat', sans-serif;
+    --color01:#A192A6;
+    --color02:#622773;
+    --color03:#4A1259;
+    --color04:#350C40;
+    --color05:#200726;
+}
+
+html body{
+background: rgb(32,7,38);
+background: linear-gradient(90deg, rgba(32,7,38,1) 35%, rgba(74,18,89,1) 75%, rgba(98,39,115,1) 100%);
+font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    background-color: var(--color03);
+    height: 80px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.701);
+}
+
+.logo{
+    width: 150px;
+    height: 50px;
+}
+
+#nav ul{
+    display: flex;
+    align-items: center;
+     gap: 20px;
+}
+
+#nav li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+    list-style: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#nav a{
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+}
+
+#nav li:hover{
+   transform: translateY(-3px);
+}
+
+#nav a:hover{
+   text-decoration: underline;
+}
+
+#btn-mobile{
+    display: none;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
+    grid-template-rows: 1fr 500px 1fr;
+}
+
+.arealogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: var(--color03);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.701);
+    margin-top: 60px;
+    border-radius: 15px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.content label{
+    color: rgba(255, 255, 255, 0.663);
+    font-size: 24px;
+    padding: 3px 0px;
+}
+
+.content input{
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.896);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.login{
+    background-color: rgba(255, 255, 255, 0.278);
+    color: rgba(255, 255, 255, 0.558);
+    font-size: 16px;
+    font-weight: bolder;
+    width: 250px;
+    height: 45px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    margin-bottom: 25px;
+}
+
+.login:hover{
+    background-color: var(--color04);
+    color: rgba(255, 255, 255, 0.685);
+    box-shadow: 0px 0px 5px black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.newuser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 50px;
+}
+
+.forgot{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.835);
+    transition: 0.3s;
+}
+
+.forgot:hover{
+    background-color: rgba(255, 255, 255, 0.153);
+    border-radius: 5px;
+     transform: translateY(-3px);
+}
+
+.new{
+    text-decoration: none;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.835);
+    transition: 0.3s;
+}
+
+.new:hover{
+    background-color: rgba(255, 255, 255, 0.153);
+    border-radius: 5px;
+     transform: translateY(-3px);
+}
+
+@media (max-width: 600px){
+    #btn-mobile {
+        display: block;
+    }
+
+    #nav ul{
+       display: block;
+        position: absolute;
+        width: 50%;
+        top:81px;
+        right:0px;
+        background-color: var(--color02);
+        box-shadow:0px 2px 5px black;
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    nav#nav.active #menu{
+        height: calc(25vh - 81px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu li{
+        margin: 10px 1rem;
+    }
+
+}
+
+#btn-mobile{
+    background-color: var(--color03);
+    color: rgba(255, 255, 255, 0.604);
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-mobile:hover{
+     transform: scale(1.1)
+}
