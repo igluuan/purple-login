@@ -17,8 +17,13 @@
     --color05: #200726;
 }
 
-html body {
+html {
+    font-size: 62.5%;
+}
+
+body {
     background: rgb(32, 7, 38);
     background: linear-gradient(90deg, rgba(32, 7, 38, 1) 35%, rgba(74, 18, 89, 1) 75%, rgba(98, 39, 115, 1) 100%);
     font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
 }
