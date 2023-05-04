@@ -1,7 +1,7 @@
 @import url(reset.css);
 
 .header {
-    width: 980px;
+    width: 90%;
     max-width: 980px;
     height: 150px;
     color: white;
@@ -51,10 +51,29 @@
     text-decoration: underline;
 }
 
+#menutoggle {
+    display: none;
+    color: white;
+    font-size: 2.5rem;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+#menutoggle:hover {
+    background-color: #00000031;
+}
+
 .container {
-    display: grid;
     width: 90%;
     max-width: 980px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
     margin: 0 auto;
     justify-content: center;
     grid-template-rows: 200px 600px;
@@ -69,28 +88,24 @@
     width: 90%;
     max-width: 980px;
     align-items: center;
+    justify-content: space-evenly;
     margin: 0 auto;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.703);
-    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
 }
 
-#image {
-    display: flex;
-    margin: 0 auto;
-    gap: 35px;
-    height: 180px;
-}
-
-#image img {
+.container img {
     width: 140px;
     cursor: pointer;
 }
 
-#image img:hover {
+.container img:hover {
     border: 3px solid rgba(0, 0, 0, 0.506);
 }
 
 .content2 {
+    width: 90%;
+    max-width: 980px;
     grid-area: g;
     margin-top: 80px;
 }
@@ -98,8 +113,6 @@
 
 #grid {
     display: grid;
-    width: 90%;
-    max-width: 980px;
     margin: 20px auto;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
     grid-template-rows: repeat(4, minmax(250px, 1fr));
@@ -111,6 +124,7 @@
 #grid img {
     background-color: rgba(0, 0, 0, 0.513);
     padding: 10px 30px;
+    width: 250px;
     height: 250px;
     border-radius: 10px;
     cursor: pointer;
@@ -190,7 +204,7 @@
 }
 
 #about {
-    width: 980px;
+    width: 90%;
     max-width: 980px;
     display: flex;
     gap: 40px;
@@ -264,15 +278,91 @@
 }
 
 .rodape {
+    text-align: center;
     grid-row-start: 4;
 }
 
 .rodape p {
-    text-align: center;
+    width: 90%;
+    max-width: 980px;
     padding: 20px;
-    margin-left: 20px;
+    margin: 0 auto;
     color: white;
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
-@media (max-width:1024px) {}
+@media (max-width:690px) {
+    .container{
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .content2{
+        margin: 0;
+    }
+
+    .carrossel{
+        display: none;
+    }
+
+    #grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+
+    .sec1, .sec2, .sec3, .sec4 {
+        display: none;
+    }
+}
+
+@media (max-width:980px) {
+
+    ul.menu {
+        display: none;
+    }
+
+    #menutoggle {
+        display: block;
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 70%;
+    }
+
+    .social ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .carrossel :nth-child(1) {
+        display: none;
+    }
+
+    .sec1, .sec2, .sec3, .sec4 {
+        width: 70%;
+    }
+
+    #grid {
+
+        grid-template-columns: repeat(3, minmax(220px, 1fr));
+        grid-template-rows: repeat(3, minmax(220px, 1fr));
+    }
+
+    #grid img {
+        width: 220px;
+    }
+
+    #grid :nth-child(n+13) {
+        display: none;
+    }
+}
